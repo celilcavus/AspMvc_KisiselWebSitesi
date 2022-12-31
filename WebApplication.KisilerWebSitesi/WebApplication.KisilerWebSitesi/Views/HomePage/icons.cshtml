@@ -1,0 +1,15 @@
+﻿@using WebApplication.KisilerWebSitesi.Models.Entity
+@model List<iconlar>
+
+<div class="social">
+    @foreach (var item in Model)
+    {
+        <a href="@item.iconlink.ToString()"><i class="@item.icon.ToString()"></i></a>
+    }
+
+    @*<a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="far fa-envelope"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fa-brands fa-github"></i></a>*@
+</div>

@@ -1,0 +1,19 @@
+﻿@model WebApplication.KisilerWebSitesi.Models.Entity.iconlar
+@{
+    ViewBag.Title = "getIcon";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+@using (Html.BeginForm("IconUpdate", "Icon", FormMethod.Post))
+{
+    @Html.LabelFor(x => x.Id)
+    @Html.TextBoxFor(x => x.Id, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.icon)
+    @Html.TextBoxFor(x => x.icon, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.iconlink)
+    @Html.TextBoxFor(x => x.iconlink, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-success" type="submit">Update</button>
+}
+

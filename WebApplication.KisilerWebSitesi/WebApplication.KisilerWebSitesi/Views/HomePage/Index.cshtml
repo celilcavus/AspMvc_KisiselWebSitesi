@@ -1,0 +1,40 @@
+﻿@using WebApplication.KisilerWebSitesi.Models.Entity
+@model List<Anasayfa>
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kisisel Web Sitesi</title>
+    <!-- css -->
+    <link rel="stylesheet" href="~/web_kisiselwebsitesi/style.css" />
+    <!-- fontawasome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+</head>
+<body>
+    <div class="center">
+        @foreach (var item in Model)
+        {
+            <div class="avatar">
+                <img src="~/web_kisiselwebsitesi/image/@item.Image.ToString()" alt="" />
+            </div>
+            <div class="content">
+
+                <h1>@item.NameAndSurname</h1>
+                <h2>@item.Title</h2>
+                <p>
+                    @item.Abaout
+                </p>
+                <h3>@item.Contact</h3>
+                @Html.Action("icons","HomePage")
+            </div>
+        }
+        </div>
+       
+</body>
+</html>

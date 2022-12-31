@@ -1,0 +1,31 @@
+﻿@model WebApplication.KisilerWebSitesi.Models.Entity.Anasayfa
+
+@{
+    ViewBag.Title = "GetHomePage";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2 class="mt-4">Home Page Update</h2>
+<hr />
+@using (Html.BeginForm("UpdateHomePage", "Admin", FormMethod.Post))
+{
+    @Html.LabelFor(i => i.Id)
+    @Html.TextBoxFor(i => i.Id, new { @class = "form-control enable" })
+    <br />
+    @Html.LabelFor(i => i.Image)
+    @Html.TextBoxFor(i => i.Image, new { @class = "form-control" }) 
+    <br />
+    @Html.LabelFor(i => i.NameAndSurname)
+    @Html.TextBoxFor(i => i.NameAndSurname, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(i => i.Title)
+    @Html.TextBoxFor(i => i.Title, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(i => i.Abaout)
+    @Html.TextAreaFor(i => i.Abaout, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(i => i.Contact)
+    @Html.TextAreaFor(i => i.Contact, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-outline-success" type="submit">Update</button>
+}

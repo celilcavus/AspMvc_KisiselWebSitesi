@@ -1,0 +1,25 @@
+﻿@using WebApplication.KisilerWebSitesi.Models.Entity
+@model List<iconlar>
+@{
+    ViewBag.Title = "iconList";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<table class="table table-bordered text-center">
+    <tr>
+        <th>Id</th>
+        <th>icon</th>
+        <th>Update</th>
+        <th>Delete</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Id</td>
+            <td><i class="@item.icon fs-1"></i></td>
+            <td><a href="/Icon/getIcon/@item.Id" class="btn btn-outline-dark">Update</a></td>
+            <td><a href="/Icon/IconDelete/@item.Id" class="btn btn-outline-danger">Delete</a></td>
+        </tr>
+    }
+</table>
+<a href="/Icon/newIconAdd" class="btn btn-outline-success">New Icon Add</a>

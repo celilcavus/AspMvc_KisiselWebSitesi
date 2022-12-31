@@ -1,0 +1,22 @@
+﻿@using WebApplication.KisilerWebSitesi.Models.Entity
+@model List<Anasayfa>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<table class="table table-bordered mt-3 text-center">
+    <tr>
+        <th>Id</th>
+        <th>Name Surname</th>
+        <th>Update</th>
+    </tr>
+    <tr>
+        @foreach (var item in Model)
+        {
+            <td>@item.Id</td>
+            <td>@item.NameAndSurname</td>
+            <td><a href="/Admin/GetHomePage/@item.Id" class="btn btn-outline-dark">Update</a></td>
+
+        }
+    </tr>
+</table>

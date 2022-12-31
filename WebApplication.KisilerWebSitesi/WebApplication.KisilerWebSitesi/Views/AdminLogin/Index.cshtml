@@ -1,0 +1,34 @@
+﻿@model WebApplication.KisilerWebSitesi.Models.Entity.Admin
+
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- css -->
+    <link rel="stylesheet" href="~/web_loginPanel/css/style.css">
+    <title>Admin Panel</title>
+</head>
+<body>
+    <div class="container">
+        <div class="contact-form">
+            <img src="~/web_loginPanel/image/children-g6e2cc4734_1920.jpg" alt="">
+            <h2>Admin Login</h2>
+            @using (Html.BeginForm("Index", "AdminLogin", FormMethod.Post))
+            {
+                <div class="texttb">
+                    @Html.TextBoxFor(x => x.username, new { @placeholder = "password" })
+                </div>
+                <div class="texttb">
+                    @Html.TextBoxFor(x => x.password, new { @type = "password", @placeholder = "password" })
+                </div>
+                <input type="submit" class="logbt" value="Login">
+            }
+        </div>
+    </div>
+</body>
+</html>
